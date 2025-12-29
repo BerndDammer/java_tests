@@ -24,19 +24,19 @@
 		<dependency>
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-base</artifactId>
-			<version>19.0.2.1</version>
+			<version>17.0.17</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.openjfx/javafx-controls -->
 		<dependency>
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-controls</artifactId>
-			<version>19.0.2.1</version>
+			<version>17.0.17</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.openjfx/javafx-graphics -->
 		<dependency>
 			<groupId>org.openjfx</groupId>
 			<artifactId>javafx-graphics</artifactId>
-			<version>19.0.2.1</version>
+			<version>17.0.17</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.openjfx/javafx-maven-plugin -->
 		<dependency>
