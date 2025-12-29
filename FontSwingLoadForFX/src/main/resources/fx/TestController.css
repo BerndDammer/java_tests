@@ -1,0 +1,8 @@
+.FXFontBackground
+{
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+    -fx-font-size: 60px;
+	-fx-background-color: yellow;
+    -fx-font-family: 'Font Awesome 5 Free Solid';
+}
