@@ -1,0 +1,50 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "DumpDeviceTree",
+            "request": "launch",
+            "mainClass": "examples.DumpDeviceTree",
+            "projectName": "usbtest"
+        },
+        {
+            "type": "java",
+            "name": "DumpDevices",
+            "request": "launch",
+            "mainClass": "examples.DumpDevices",
+            "projectName": "usbtest"
+        },
+        {
+            "type": "java",
+            "name": "DumpNames",
+            "request": "launch",
+            "mainClass": "examples.DumpNames",
+            "projectName": "usbtest"
+        },
+        {
+            "type": "java",
+            "name": "FXStarter",
+            "request": "launch",
+            "mainClass": "fxgui.FXStarter",
+            "projectName": "usbtest"
+        },
+        {
+            "type": "java",
+            "name": "USBTest2",
+            "request": "launch",
+            "mainClass": "usbtest.USBTest2",
+            "projectName": "usbtest"
+        }
+    ]
+}
