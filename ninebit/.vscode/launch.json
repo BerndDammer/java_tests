@@ -4,8 +4,13 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        
-
+        {
+            "type": "java",
+            "name": "NineBit",
+            "request": "launch",
+            "mainClass": "NineBit",
+            "projectName": "ninebit_73836309"
+        },
         {
             "type": "java",
             "name": "Current File",
