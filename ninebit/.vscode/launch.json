@@ -8,7 +8,7 @@
             "type": "java",
             "name": "NineBit",
             "request": "launch",
-            "mainClass": "NineBit",
+            "mainClass": "NineBitNails",
             "projectName": "ninebit_73836309"
         },
         {
