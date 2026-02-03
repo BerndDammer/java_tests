@@ -6,9 +6,16 @@
     "configurations": [
         {
             "type": "java",
+            "name": "NineBitNails",
+            "request": "launch",
+            "mainClass": "test.NineBitNails",
+            "projectName": "ninebit_73836309"
+        },
+        {
+            "type": "java",
             "name": "NineBit",
             "request": "launch",
-            "mainClass": "NineBitNails",
+            "mainClass": "test.NineBitNails",
             "projectName": "ninebit_73836309"
         },
         {
