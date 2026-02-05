@@ -6,13 +6,12 @@ class NineBitNails //
 {
     private NineBitNails() //
     {
-        CollectedAlphabet ca;
-        Alphabet a = new AlphabetR();
+        Alphabet a = new Alphabet();
         do {
-            ca= searchBitArr(a);
-            if(ca.isInteresting())
+            CollectedAlphabet ca = searchBitArr(a);
+            if (ca.isInteresting()) //
             {
-                ResultPrinter.printResult(a,ca);
+                ResultPrinter.printResult(a, ca);
             }
         } while (a.next());
     }
@@ -21,10 +20,13 @@ class NineBitNails //
     {
         CollectedAlphabet ca = new CollectedAlphabet();
         int i, j, k;
-        for (i = 0; i < COUNT_DATA - 1; i++) {
-            for (j = i + 1; j < COUNT_DATA; j++) {
+        for (i = 0; i < COUNT_DATA - 1; i++) // check for every code
+        {
+            for (j = 0; j < COUNT_DATA; j++) // with every code include self
+            {
                 int mask = a.get(i) | a.get(j) << POW2_CODE;
-                for (k = 0; k < POW2_CODE; k++) {
+                for (k = 0; k < POW2_CODE; k++) // every intersect bitmask
+                {
                     int ind = (mask >> k) & (COUNT_CODE - 1);
                     ca.found(ind);
                 }
