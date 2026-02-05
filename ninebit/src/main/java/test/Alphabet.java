@@ -1,15 +1,15 @@
 package test;
 
-import static test.CONSTANTS.*;
+import static test.Parameter.*;
 
 public class Alphabet //
 {
-    protected boolean[] b = new boolean[COUNT_CODE];
-    protected int[] index = new int[COUNT_DATA];
+    protected boolean[] bitfield = new boolean[countCode];
+    protected int[] index = new int[countData];
 
     Alphabet() {
-        for (int i = 0; i < COUNT_CODE; i++) {
-            b[i] = i < COUNT_DATA;
+        for (int i = 0; i < countCode; i++) {
+            bitfield[i] = i < countData;
         }
         buildIndex();
     }
@@ -20,13 +20,13 @@ public class Alphabet //
 
     protected void buildIndex() {
         int j = 0;
-        for (int i = 0; i < COUNT_CODE; i++) {
-            if (b[i]) {
+        for (int i = 0; i < countCode; i++) {
+            if (bitfield[i]) {
                 index[j] = i;
                 j++;
             }
         }
-        if (j != COUNT_DATA)
+        if (j != countData)
             System.out.println("j " + j);
     }
 
@@ -34,15 +34,15 @@ public class Alphabet //
         int i;
         int lower_one_count = 0;
         boolean found = false;
-        for (i = 0; i < COUNT_CODE - 1; i++) // search bit to shift up
+        for (i = 0; i < countCode - 1; i++) // search bit to shift up
         {
-            if (b[i] && !b[i + 1]) // found one to shift up
+            if (bitfield[i] && !bitfield[i + 1]) // found one to shift up
             {
-                b[i] = false;
-                b[i + 1] = true;
+                bitfield[i] = false;
+                bitfield[i + 1] = true;
                 found = true;
                 break;
-            } else if (b[i]) // count ones to shift down
+            } else if (bitfield[i]) // count ones to shift down
             {
                 lower_one_count++;
             }
@@ -51,7 +51,7 @@ public class Alphabet //
         {
             for (int j = 0; j < i; j++) //
             {
-                b[j] = j < lower_one_count;
+                bitfield[j] = j < lower_one_count;
             }
             buildIndex();
         }

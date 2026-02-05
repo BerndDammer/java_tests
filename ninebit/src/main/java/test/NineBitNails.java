@@ -1,6 +1,6 @@
 package test;
 
-import static test.CONSTANTS.*;
+import static test.Parameter.*;
 
 class NineBitNails //
 {
@@ -20,14 +20,14 @@ class NineBitNails //
     {
         CollectedAlphabet ca = new CollectedAlphabet();
         int i, j, k;
-        for (i = 0; i < COUNT_DATA - 1; i++) // check for every code
+        for (i = 0; i < countData - 1; i++) // check for every code
         {
-            for (j = 0; j < COUNT_DATA; j++) // with every code include self
+            for (j = 0; j < countData; j++) // with every code include self
             {
-                int mask = a.get(i) | a.get(j) << POW2_CODE;
-                for (k = 0; k < POW2_CODE; k++) // every intersect bitmask
+                int mask = a.get(i) | a.get(j) << pow2Code;
+                for (k = 0; k < pow2Code; k++) // every intersect bitmask
                 {
-                    int ind = (mask >> k) & (COUNT_CODE - 1);
+                    int ind = (mask >> k) & (countCode - 1);
                     ca.found(ind);
                 }
             }

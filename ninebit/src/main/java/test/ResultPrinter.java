@@ -1,6 +1,6 @@
 package test;
 
-import static test.CONSTANTS.*;
+import static test.Parameter.*;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -14,10 +14,10 @@ public class ResultPrinter //
     {
         int i;
         StringBuilder sb = new StringBuilder();
-        char[] reg = new char[POW2_CODE];
+        char[] reg = new char[pow2Code];
         sb.append("------------ alphabet .....................\n");
         append(sb);
-        for (i = 0; i < COUNT_DATA; i++)//
+        for (i = 0; i < countData; i++)//
         {
             int code = a.get(i);
             bitShow(code, reg);
@@ -33,7 +33,7 @@ public class ResultPrinter //
         }
         sb.append("------------ free codes .....................\n");
         append(sb);
-        for (i = 0; i < COUNT_CODE; i++)//
+        for (i = 0; i < countCode; i++)//
         {
             if (!ca.get(i)) //
             {

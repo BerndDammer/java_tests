@@ -1,12 +1,12 @@
 package test;
 
-import static test.CONSTANTS.*;
+import static test.Parameter.*;
 
 public class CollectedAlphabet {
-    boolean[] b = new boolean[COUNT_CODE];
+    boolean[] b = new boolean[countCode];
 
     CollectedAlphabet() {
-        for (int i = 0; i < COUNT_CODE; i++) {
+        for (int i = 0; i < countCode; i++) {
             b[i] = false;
         }
     }
@@ -17,21 +17,21 @@ public class CollectedAlphabet {
 
     public void pNotFound() {
         int c = 0;
-        for (int i = 0; i < COUNT_CODE; i++) {
+        for (int i = 0; i < countCode; i++) {
             if (!b[i])
                 c++;
         }
-        if (c > TRIGGER)
+        if (c > trigger)
             System.out.println("Number free bitmasks: " + c);
     }
 
     public boolean isInteresting() {
         int c = 0;
-        for (int i = 0; i < COUNT_CODE; i++) {
+        for (int i = 0; i < countCode; i++) {
             if (!b[i])
                 c++;
         }
-        return (c > TRIGGER);
+        return (c > trigger);
     }
 
     public boolean get(int i) //
