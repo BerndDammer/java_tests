@@ -1,6 +1,6 @@
 package test;
 
-//import static test.Parameter.*;
+import static test.Parameter.*;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -10,14 +10,14 @@ import java.nio.file.StandardOpenOption;
 public class ResultPrinter //
 {
 
-    public static void printResult(Parameter p,AlphabetIndexed a, AlphabetCollected ca) //
+    public static void printResult(Alphabet a, CollectedAlphabet ca) //
     {
         int i;
         StringBuilder sb = new StringBuilder();
-        char[] reg = new char[p.getPow2Code()];
+        char[] reg = new char[pow2Code];
         sb.append("------------ alphabet .....................\n");
         append(sb);
-        for (i = 0; i < p.getCountData(); i++)//
+        for (i = 0; i < countData; i++)//
         {
             int code = a.get(i);
             bitShow(code, reg);
@@ -33,9 +33,9 @@ public class ResultPrinter //
         }
         sb.append("------------ free codes .....................\n");
         append(sb);
-        for (i = 0; i < p.getCountCode(); i++)//
+        for (i = 0; i < countCode; i++)//
         {
-            if (!ca.getAt(i)) //
+            if (!ca.get(i)) //
             {
                 bitShow(i, reg);
                 sb.append(reg);
@@ -60,7 +60,7 @@ public class ResultPrinter //
         }
     }
 
-    private static void bitShow(int code, char[] reg) //
+    static void bitShow(int code, char[] reg) //
     {
         for (int i = reg.length - 1; i >= 0; i--) //
         {

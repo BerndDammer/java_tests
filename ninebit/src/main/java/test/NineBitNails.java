@@ -1,43 +1,43 @@
 package test;
 
-import static test.Parameter.*;
+//import static test.Parameter.*;
 
 class NineBitNails //
 {
-    private NineBitNails() //
+    private NineBitNails(Parameter p) //
     {
-        Alphabet a = new Alphabet();
+        AlphabetIndexed a = new AlphabetIncremented(p);
         do {
-            CollectedAlphabet ca = searchBitArr(a);
+            AlphabetCollected ca = searchBitArr(p,a);
             if (ca.isInteresting()) //
             {
-                ResultPrinter.printResult(a, ca);
+                ResultPrinter.printResult(p, a, ca);
             }
         } while (a.next());
     }
 
-    private CollectedAlphabet searchBitArr(Alphabet a) //
+    private AlphabetCollected searchBitArr(Parameter p, AlphabetIndexed a) //
     {
-        CollectedAlphabet ca = new CollectedAlphabet();
+        AlphabetCollected ca = new AlphabetCollected(p);
         int i, j, k;
-        for (i = 0; i < countData - 1; i++) // check for every code
+        for (i = 0; i < p.getCountData() - 1; i++) // check for every code
         {
-            for (j = 0; j < countData; j++) // with every code include self
+            for (j = 0; j < p.getCountData(); j++) // with every code include self
             {
-                int mask = a.get(i) | a.get(j) << pow2Code;
-                for (k = 0; k < pow2Code; k++) // every intersect bitmask
+                int mask = a.get(i) | a.get(j) << p.getPow2Code();
+                for (k = 0; k < p.getPow2Code(); k++) // every intersect bitmask
                 {
-                    int ind = (mask >> k) & (countCode - 1);
+                    int ind = (mask >> k) & (p.getCountCode() - 1);
                     ca.found(ind);
                 }
             }
         }
-        ca.pNotFound();
+        //ca.pNotFound();
         return ca;
     }
 
     public static void main(String[] args) //
     {
-        new NineBitNails();
+        new NineBitNails(new Parameter());
     }
 }
