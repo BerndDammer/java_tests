@@ -2,12 +2,13 @@ package test;
 
 public class Parameter //
 {
-    private final int pow2Data = 3;
-    private final int pow2Code = 4;
-    private final int countData = 1 << pow2Data;
-    private final int countCode = 1 << pow2Code;
-    private final int trigger = 3;
-    private final int countRandomized = 100 * 1000 * 1000;
+    // TODO protected non final for testability ???
+    protected int pow2Data = 3;
+    protected int pow2Code = 4;
+    protected int countData = 1 << pow2Data;
+    protected int countCode = 1 << pow2Code;
+    protected int trigger = 3;
+    protected int countRandomized = 100 * 1000 * 1000;
 
     public int getPow2Data() {
         return pow2Data;

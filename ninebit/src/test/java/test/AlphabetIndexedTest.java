@@ -1,0 +1,59 @@
+package test;
+
+import org.junit.jupiter.api.*;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class AlphabetIndexedTest //
+{
+    static Parameter para3;
+
+    @BeforeAll
+    public static void initXXX() //
+    {
+        para3 = new ParameterTestable(3);
+    }
+
+    class AlphabetIndexedTestable extends AlphabetIndexed //
+    {
+        AlphabetIndexedTestable(Parameter p, boolean[] bitfield) //
+        {
+            super(p);
+            this.bitfield = bitfield;
+        }
+
+        @Override
+        public boolean next() {
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'next'");
+        }
+
+        public void buildIndex() // make it public
+        {
+            super.buildIndex();
+        }
+
+        public int[] getIndex() {
+            return index;
+        }
+    }
+
+    @Test
+    public void t1() //
+    {
+        boolean[] bf = new boolean[] //
+        { //
+                true, false, false, true, //
+                false, true, false, true, //
+                true, false, true, false, //
+                false, false, true, true //
+        };
+        int[] iex = new int[] //
+        {
+                0, 3, 5, 7, 8, 10, 14, 15
+        };
+        AlphabetIndexedTestable ait = new AlphabetIndexedTestable(para3, bf);
+        ait.buildIndex();
+        assertArrayEquals(iex, ait.index, "t1-indexed");
+    }
+}
