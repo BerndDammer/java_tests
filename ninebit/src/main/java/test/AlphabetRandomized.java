@@ -19,15 +19,15 @@ public class AlphabetRandomized extends AlphabetIndexed //
     @Override
     public boolean next() {
         int i, j;
-        for (i = 0; i < p.getCountCode(); i++) // search bit to shift up
+        for (i = 0; i < p.getCountCode(); i++) // clear all
         {
             bitfield[i] = false;
         }
-        for (i = p.getCountCode(); i > p.getCountCode() - p.getCountData(); i--) // search bit to shift up
+        for (i = p.getCountCode(); i > p.getCountCode() - p.getCountData(); i--) // randomize in
         {
             int insertIndex = r.nextInt(i);
             int lower_false_count = 0;
-            for (j = 0; j < p.getCountCode(); j++) // search bit to shift up
+            for (j = 0; j < p.getCountCode(); j++) // 
             {
                 if (!bitfield[j]) // found zero for possibile insert
                 {

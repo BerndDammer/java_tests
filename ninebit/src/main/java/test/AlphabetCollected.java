@@ -19,16 +19,6 @@ public class AlphabetCollected extends AlphabetIndexed//
         bitfield[index] = true;
     }
 
-    // public void pNotFound() {
-    //     int c = 0;
-    //     for (int i = 0; i < p.getCountCode(); i++) {
-    //         if (!bitfield[i])
-    //             c++;
-    //     }
-    //     if (c > trigger)
-    //         System.out.println("Number free bitmasks: " + c);
-    // }
-
     public boolean isInteresting() {
         int c = 0;
         for (int i = 0; i < p.getCountCode(); i++) {

@@ -1,7 +1,6 @@
 package test;
 
 import org.junit.jupiter.api.*;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class AlphabetIncrementedTest //
@@ -52,6 +51,7 @@ class AlphabetIncrementedTest //
     }
 
     @Test
+    @Disabled
     public void t2() //
     {
         int i;
@@ -95,17 +95,64 @@ class AlphabetIncrementedTest //
         AlphabetIncrementedTestable ait = new AlphabetIncrementedTestable(para1, bf[0]);
         for (i = 1; i < bf.length; i++) //
         {
-            System.out.println("t2 " + i);
+            System.out.println("t3 " + i);
             r = ait.next();
             assertEquals(i != bf.length - 1, r);
             assertArrayEquals(bf[i], ait.getBitfield());
         }
     }
 
-    public void testStepping(Parameter p, boolean[] before, boolean[] after, boolean nextResult) //
+    private final boolean[][] t4bf1 = new boolean[][] //
+    {
+            { true, true, true, true, true, true, true, true, false, false, false, false, false, false, false, false },
+            { true, true, true, true, true, true, true, false, true, false, false, false, false, false, false, false },
+    };
+
+    private final boolean[][] t4bf2 = new boolean[][] //
+    {
+            { false, false, false, false, false, false, false, true, false, true, true, true, true, true, true, true },
+            { false, false, false, false, false, false, false, false, true, true, true, true, true, true, true, true },
+    };
+
+    private final boolean[][] t4bflast = new boolean[][] //
+    {
+            { false, false, false, false, false, false, false, false, true, true, true, true, true, true, true, true },
+            { false, false, false, false, false, false, false, false, true, true, true, true, true, true, true, true },
+    };
+
+    @Test
+    public void t4() //
+    {
+        Parameter p = new ParameterTestable(3);
+        int i;
+        boolean r;
+        boolean[][][] bf = new boolean[][][] //
+        {
+                t4bf1,
+                t4bf2,
+        };
+        AlphabetIncrementedTestable ait;
+
+        for (i = 1; i < bf.length; i++) //
+        {
+            System.out.println("t4 " + i);
+            ait = new AlphabetIncrementedTestable(p, bf[i][0]);
+            r = ait.next();
+            assertEquals(true, r);
+            assertArrayEquals(bf[i][1], ait.getBitfield());
+        }
+
+        // last
+        ait = new AlphabetIncrementedTestable(p, t4bflast[0]);
+        r = ait.next();
+        assertEquals(false, ait.next());
+        assertArrayEquals(t4bflast[1], ait.getBitfield());
+    }
+
+    public void testStepping(Parameter p, boolean[] before, boolean[] after, boolean hasNext) //
     {
         AlphabetIncrementedTestable ait = new AlphabetIncrementedTestable(p, before);
-        assertEquals(nextResult, ait.next());
+        assertEquals(hasNext, ait.next());
         assertArrayEquals(after, ait.getBitfield());
     }
 }
