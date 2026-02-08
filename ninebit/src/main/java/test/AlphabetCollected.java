@@ -23,6 +23,15 @@ public class AlphabetCollected extends AlphabetIndexed//
         return (c > p.getTrigger());
     }
 
+    public int countFree() {
+        int c = 0;
+        for (int i = 0; i < p.getCountCode(); i++) {
+            if (!bitfield[i])
+                c++;
+        }
+        return (c);
+    }
+
     public boolean getAt(int i) //
     {
         return (bitfield[i]);
@@ -37,7 +46,7 @@ public class AlphabetCollected extends AlphabetIndexed//
     public void collectIt(AlphabetIndexed a) //
     {
         int i, j, k;
-        for (i = 0; i < p.getCountData() - 1; i++) // check for every code
+        for (i = 0; i < p.getCountData() ; i++) // check for every code
         {
             for (j = 0; j < p.getCountData(); j++) // with every code include self
             {

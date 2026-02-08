@@ -13,6 +13,17 @@ public class ParameterTestable extends Parameter //
         countRandomized = 1;
     }
 
+    public ParameterTestable(int p2data, int p2code) //
+    {
+        pow2Data = p2data;
+        pow2Code = p2code;
+        countData = 1 << pow2Data;
+        countCode = 1 << pow2Code;
+
+        trigger = 4711; // intentionally bullshit
+        countRandomized = 1;
+    }
+
     public ParameterTestable(int p2data, int trigger, int countRandomized) //
     {
         this(p2data);

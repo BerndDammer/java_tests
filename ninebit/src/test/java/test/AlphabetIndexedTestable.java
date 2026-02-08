@@ -6,6 +6,7 @@ class AlphabetIndexedTestable extends AlphabetIndexed //
     {
         super(p);
         this.bitfield = bitfield;
+        buildIndex();
     }
 
     @Override

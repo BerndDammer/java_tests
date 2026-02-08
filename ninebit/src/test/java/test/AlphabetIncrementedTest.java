@@ -23,6 +23,7 @@ class AlphabetIncrementedTest //
         {
             super(p);
             this.bitfield = bitfield;
+            buildIndex();
         }
 
         public boolean[] getBitfield() {

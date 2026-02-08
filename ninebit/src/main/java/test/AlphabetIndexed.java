@@ -1,6 +1,5 @@
 package test;
 
-
 public abstract class AlphabetIndexed //
 {
     protected final Parameter p;
@@ -32,8 +31,11 @@ public abstract class AlphabetIndexed //
                 j++;
             }
         }
-        if (j != p.getCountData())
+        if (j != p.getCountData()) //
+        {
             System.out.println("j " + j);
+            throw new Error("invalid alphabet size");
+        }
     }
 
     public abstract boolean next();

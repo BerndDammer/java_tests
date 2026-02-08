@@ -19,43 +19,74 @@ class AlphabetCollectedTest //
 
     private final boolean[][] t1bf1 = new boolean[][] // only all on off
     {
-            { true, false, false, false, false, false, false, false, false, false, false, false, false, false, true },
-            { true, true, false, true, false, false, false, true, true, false, false, false, true, false, true, true },
+            { //
+                    true, false, false, false, false, false, false, false, //
+                    false, false, false, false, false, false, false, true },
+            { //
+                    true, true, false, true, false, false, false, true,
+                    true, false, false, false, true, false, true, true },
     };
 
     @Test
     public void t1() //
     {
-        Parameter p = new ParameterTestable(3);
+        Parameter p = new ParameterTestable(1,4);
         AlphabetIndexedTestable ait;
         AlphabetCollectedTestable act;
 
         ait = new AlphabetIndexedTestable(p, t1bf1[0]);
         act = new AlphabetCollectedTestable(p);
         act.collectIt(ait);
-        assertEquals(t1bf1[1], act.getBitfield());
+        assertArrayEquals(t1bf1[1], act.getBitfield());
     }
 
-    private final boolean[][] t2bf1 = new boolean[][] // all single one
+    private final boolean[][] t2bf1 = new boolean[][] // only all on off
     {
-            { false, true, true, false, true, false, false, false, true, false, false, false, false, false, false },
-            { true, true, true, true, true, true, true, false, true, true, true, false, true, false, false, false },
+            { //
+                    false, true, true, false, true, false, false, false, //
+                    true, false, false, false, false, false, false, false },
+            { //
+                    true, true, true, true, true, true, true, false,
+                    true, true, true, false, true, false, false, false },
     };
 
-    private final boolean[][] t2bf2 = new boolean[][] //
+    @Test
+    public void t2() //
+    {
+        Parameter p = new ParameterTestable(2,4);
+        AlphabetIndexedTestable ait;
+        AlphabetCollectedTestable act;
+
+        ait = new AlphabetIndexedTestable(p, t2bf1[0]);
+        act = new AlphabetCollectedTestable(p);
+        act.collectIt(ait);
+        assertArrayEquals(t2bf1[1], act.getBitfield());
+    }
+
+    private final boolean[][] t3bf1 = new boolean[][] // all single one
+    {
+            { //
+                    true, true, true, true, true, true, true, true, //
+                    false, false, false, false, false, false, false, false },
+            { //
+                    true, true, true, true, true, true, true, true, //
+                    true, true, true, true, true, true, true, false },
+    };
+
+    private final boolean[][] t3bf2 = new boolean[][] //
     {
             { true, false, false, false, false, false, false, false, false, false, false, false, false, false, true },
             { true, true, false, true, false, false, false, true, true, false, false, false, true, false, true, true },
     };
 
     @Test
-    public void t2() //
+    public void t3() //
     {
         int i;
         boolean bf[][][] = //
                 {
-                        t2bf1,
-                        t2bf2,
+                        t3bf1,
+                        //t3bf2,
                 };
         Parameter p = new ParameterTestable(3);
         AlphabetIndexedTestable ait;
@@ -63,11 +94,10 @@ class AlphabetCollectedTest //
 
         for (i = 0; i < bf.length; i++) {
             System.out.println("Coll t2 i: " + i);
-
             ait = new AlphabetIndexedTestable(p, bf[i][0]);
             act = new AlphabetCollectedTestable(p);
             act.collectIt(ait);
-            assertEquals(bf[i][1], act.getBitfield());
+            assertArrayEquals(bf[i][1], act.getBitfield());
         }
     }
 }

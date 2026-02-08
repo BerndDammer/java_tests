@@ -9,6 +9,13 @@
             "name": "NineBitNails",
             "request": "launch",
             "mainClass": "test.NineBitNails",
+            "projectName": "ninebitnail"
+        },
+        {
+            "type": "java",
+            "name": "NineBitNails",
+            "request": "launch",
+            "mainClass": "test.NineBitNails",
             "projectName": "ninebit_73836309"
         },
         {
