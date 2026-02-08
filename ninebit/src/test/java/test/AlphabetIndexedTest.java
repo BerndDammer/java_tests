@@ -14,30 +14,6 @@ class AlphabetIndexedTest //
         para3 = new ParameterTestable(3);
     }
 
-    class AlphabetIndexedTestable extends AlphabetIndexed //
-    {
-        AlphabetIndexedTestable(Parameter p, boolean[] bitfield) //
-        {
-            super(p);
-            this.bitfield = bitfield;
-        }
-
-        @Override
-        public boolean next() {
-            // TODO Auto-generated method stub
-            throw new UnsupportedOperationException("Unimplemented method 'next'");
-        }
-
-        public void buildIndex() // make it public
-        {
-            super.buildIndex();
-        }
-
-        public int[] getIndex() {
-            return index;
-        }
-    }
-
     @Test
     public void t1() //
     {
