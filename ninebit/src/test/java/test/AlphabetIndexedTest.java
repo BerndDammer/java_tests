@@ -9,13 +9,13 @@ class AlphabetIndexedTest //
     static Parameter para3;
 
     @BeforeAll
-    public static void initXXX() //
+    static void initXXX() //
     {
         para3 = new ParameterTestable(3);
     }
 
     @Test
-    public void t1() //
+    void t1() //
     {
         boolean[] bf = new boolean[] //
         { //

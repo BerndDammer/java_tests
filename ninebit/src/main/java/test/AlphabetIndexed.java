@@ -1,7 +1,11 @@
 package test;
 
+import java.util.logging.Logger;
+
 public abstract class AlphabetIndexed //
 {
+    private static final Logger logger = Logger.getGlobal();
+
     protected final Parameter p;
     protected boolean[] bitfield;
     protected int[] index;
@@ -23,6 +27,7 @@ public abstract class AlphabetIndexed //
         return index[i];
     }
 
+    @SuppressWarnings("java:S112")
     protected void buildIndex() {
         int j = 0;
         for (int i = 0; i < p.getCountCode(); i++) {
@@ -33,8 +38,9 @@ public abstract class AlphabetIndexed //
         }
         if (j != p.getCountData()) //
         {
-            System.out.println("j " + j);
-            throw new Error("invalid alphabet size");
+            String msg ="invalid alphabet size";
+            logger.severe(msg);
+            throw new Error(msg);
         }
     }
 

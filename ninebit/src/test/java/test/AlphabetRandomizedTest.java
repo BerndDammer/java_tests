@@ -3,8 +3,12 @@ package test;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.logging.Logger;
+
 class AlphabetRandomizedTest //
 {
+    private static final Logger logger = Logger.getGlobal();
+
     class AlphabetRandomizedTestable extends AlphabetRandomized //
     {
         AlphabetRandomizedTestable(Parameter p) //
@@ -18,7 +22,7 @@ class AlphabetRandomizedTest //
     }
 
     @Test
-    public void t1() //
+    void t1() //
     {
         Parameter p = new ParameterTestable(8, 20, 1000);
         int i, c;
@@ -37,7 +41,7 @@ class AlphabetRandomizedTest //
     }
 
     @Test
-    public void t2() //
+    void t2() //
     {
         final int COUNT = 1000;
         Parameter p = new ParameterTestable(8, 20, COUNT + 1);
@@ -49,7 +53,7 @@ class AlphabetRandomizedTest //
             m += getMeanIndex(art, 256);
         }
         m /= (double) COUNT;
-        System.out.println("Rand t2 m : " + m);
+        logger.info("Rand t2 m : " + m);
         assertTrue(m > 254.6 && m < 257.0);
     }
 

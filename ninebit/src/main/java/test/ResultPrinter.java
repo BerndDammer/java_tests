@@ -1,7 +1,5 @@
 package test;
 
-//import static test.Parameter.*;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -9,6 +7,9 @@ import java.nio.file.StandardOpenOption;
 
 public class ResultPrinter //
 {
+    private ResultPrinter() {
+        /* This utility class should not be instantiated */
+    }
 
     public static void printResult(Parameter p,AlphabetIndexed a, AlphabetCollected ca) //
     {

@@ -1,6 +1,5 @@
 package test;
 
-//import static test.Parameter.*;
 
 import java.security.SecureRandom;
 import java.util.Random;
@@ -13,8 +12,8 @@ public class AlphabetRandomized extends AlphabetIndexed //
     }
 
     private int tryCount = 0;
-    // Random r = new Random();
-    Random r = new SecureRandom();
+    Random r = new Random();
+    //Random r = new SecureRandom();
 
     @Override
     public boolean next() {
@@ -26,19 +25,19 @@ public class AlphabetRandomized extends AlphabetIndexed //
         for (i = p.getCountCode(); i > p.getCountCode() - p.getCountData(); i--) // randomize in
         {
             int insertIndex = r.nextInt(i);
-            int lower_false_count = 0;
+            int countLowerFalse = 0;
             for (j = 0; j < p.getCountCode(); j++) // 
             {
                 if (!bitfield[j]) // found zero for possibile insert
                 {
-                    if (insertIndex == lower_false_count) // randomized insert
+                    if (insertIndex == countLowerFalse) // randomized insert
                     {
                         bitfield[j] = true;
                         break;
 
                     } else //
                     {
-                        lower_false_count++;
+                        countLowerFalse++;
                     }
                 }
             }

@@ -1,6 +1,5 @@
 package test;
 
-//import static test.Parameter.*;
 
 class NineBitNails //
 {

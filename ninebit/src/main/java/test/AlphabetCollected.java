@@ -45,8 +45,10 @@ public class AlphabetCollected extends AlphabetIndexed//
 
     public void collectIt(AlphabetIndexed a) //
     {
-        int i, j, k;
-        for (i = 0; i < p.getCountData() ; i++) // check for every code
+        int i;
+        int j;
+        int k;
+        for (i = 0; i < p.getCountData(); i++) // check for every code
         {
             for (j = 0; j < p.getCountData(); j++) // with every code include self
             {

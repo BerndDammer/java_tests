@@ -28,9 +28,9 @@ class AlphabetCollectedTest //
     };
 
     @Test
-    public void t1() //
+    void t1() //
     {
-        Parameter p = new ParameterTestable(1,4);
+        Parameter p = new ParameterTestable(1, 4);
         AlphabetIndexedTestable ait;
         AlphabetCollectedTestable act;
 
@@ -51,9 +51,9 @@ class AlphabetCollectedTest //
     };
 
     @Test
-    public void t2() //
+    void t2() //
     {
-        Parameter p = new ParameterTestable(2,4);
+        Parameter p = new ParameterTestable(2, 4);
         AlphabetIndexedTestable ait;
         AlphabetCollectedTestable act;
 
@@ -75,18 +75,20 @@ class AlphabetCollectedTest //
 
     private final boolean[][] t3bf2 = new boolean[][] //
     {
-            { true, false, false, false, false, false, false, false, false, false, false, false, false, false, true },
-            { true, true, false, true, false, false, false, true, true, false, false, false, true, false, true, true },
+            { true, false, false, false, false, false, false, false, false, false, false, false, false,
+                    false, true },
+            { true, true, false, true, false, false, false, true, true, false, false, false, true, false,
+                    true, true },
     };
 
     @Test
-    public void t3() //
+    void t3() //
     {
         int i;
-        boolean bf[][][] = //
+        boolean[][][] bf = //
                 {
                         t3bf1,
-                        //t3bf2,
+                // t3bf2,
                 };
         Parameter p = new ParameterTestable(3);
         AlphabetIndexedTestable ait;

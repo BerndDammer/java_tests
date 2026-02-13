@@ -10,7 +10,7 @@ class AlphabetIncrementedTest //
     static Parameter para1;
 
     @BeforeAll
-    public static void initXXX() //
+    static void initXXX() //
     {
         para3 = new ParameterTestable(3);
         para2 = new ParameterTestable(2);
@@ -32,7 +32,7 @@ class AlphabetIncrementedTest //
     }
 
     @Test
-    public void t1() //
+    void t1() //
     {
         boolean[] bf1 = new boolean[] //
         { //
@@ -53,7 +53,7 @@ class AlphabetIncrementedTest //
 
     @Test
     @Disabled
-    public void t2() //
+    void t2() //
     {
         int i;
         boolean r;
@@ -79,7 +79,7 @@ class AlphabetIncrementedTest //
     }
 
     @Test
-    public void t3() //
+    void t3() //
     {
         int i;
         boolean r;
@@ -122,7 +122,7 @@ class AlphabetIncrementedTest //
     };
 
     @Test
-    public void t4() //
+    void t4() //
     {
         Parameter p = new ParameterTestable(3);
         int i;
@@ -145,7 +145,7 @@ class AlphabetIncrementedTest //
 
         // last
         ait = new AlphabetIncrementedTestable(p, t4bflast[0]);
-        r = ait.next();
+        ait.next();
         assertEquals(false, ait.next());
         assertArrayEquals(t4bflast[1], ait.getBitfield());
     }
